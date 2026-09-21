@@ -1,4 +1,5 @@
 import styles from "./Home.module.css";
+import { Link } from "react-router";
 
 const Home = function () {
   return (
@@ -8,7 +9,9 @@ const Home = function () {
         <div className={styles["sub-text"]}>on all essential items</div>
       </div>
       <div className={styles["shop-btn-container"]}>
-        <button className={styles["shop-btn"]}>SHOP NOW</button>
+        <Link className={styles["shop-btn"]} to="shop">
+          SHOP NOW
+        </Link>
       </div>
     </div>
   );

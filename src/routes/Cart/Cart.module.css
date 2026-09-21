@@ -1,0 +1,64 @@
+.main-container {
+  display: grid;
+  font-family: "Nunito";
+  padding: 30px 50px;
+  font-size: 1.5rem;
+}
+
+.label-container {
+  display: flex;
+  justify-content: space-around;
+  width: 1370px;
+  margin-bottom: 20px;
+  color: #f99500;
+  font-weight: 900;
+}
+
+.invoice-continer {
+  display: grid;
+}
+.item-container {
+  display: flex;
+  border: 1px solid black;
+  margin-top: 3px;
+  border-radius: 10px;
+  background-color: #f2f2f4;
+}
+
+.total-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  padding-right: 200px;
+}
+
+.item {
+  width: 455px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap; /* 2. Forces the text to stay on a single line */
+  overflow: hidden; /* 3. Hides the text that spills out */
+  text-overflow: ellipsis;
+}
+
+.up-down {
+  background-color: inherit;
+  border: none;
+  color: blue;
+  font-weight: 800;
+}
+
+.up-down:hover {
+  color: #f99500;
+}
+
+.up-down:active {
+  transform: translateY(2px);
+}
+
+.count {
+  display: flex;
+  font-weight: 600;
+  gap: 10px;
+}

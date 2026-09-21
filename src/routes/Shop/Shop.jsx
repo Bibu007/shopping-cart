@@ -1,10 +1,8 @@
-import { Outlet } from "react-router";
-import Header from "./components/Header/Header";
-//import styles from "./Home.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
-import styles from "./App.module.css";
-
+import { useEffect, useState } from "react";
+import styles from "./Shop.module.css";
+import Card from "../../components/Card/Card";
+import { useOutletContext } from "react-router";
+/*
 const useData = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -27,9 +25,10 @@ const useData = () => {
 
   return { data, setData, error, loading }; //returns an object
 };
-
-const App = function () {
-  const [cart, setCart] = useState({});
+*/
+const Shop = function () {
+  const { modifyCart, data } = useOutletContext();
+  /*
   const { data, setData, error, loading } = useData();
   //console.log("modifyCart type:", typeof modifyCart);
 
@@ -43,14 +42,7 @@ const App = function () {
 
   console.log(data);
 
-  const modifyCart = function (key, count) {
-    setCart((cart) => ({
-      ...cart,
-      [key]: count,
-    }));
-
-    console.log(`cart: `, cart);
-
+  function handleModifyCart(key, count) {
     setData((prevData) =>
       prevData.map((item) =>
         item.id === key ? { ...item, count: count } : item,
@@ -59,22 +51,23 @@ const App = function () {
 
     console.log("count", count);
     console.log("data", data);
-  };
+    modifyCart(key, count);
+  }
+*/
+  const cardList = data.map((item) => (
+    <Card
+      key={item.id}
+      id={item.id}
+      src={item.image}
+      title={item.title}
+      category={item.category}
+      price={item.price}
+      modifyCart={modifyCart}
+      itemCount={item.count}
+    />
+  ));
 
-  const countItems = function () {
-    let count = 0;
-    for (const c in cart) {
-      count = count + cart[c];
-    }
-    return count;
-  };
-
-  return (
-    <>
-      <Header count={countItems()} />
-      <Outlet context={{ modifyCart, data }} />
-    </>
-  );
+  return <div className={styles["cards-grid"]}>{cardList}</div>;
 };
 
-export default App;
+export default Shop;

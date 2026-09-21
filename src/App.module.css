@@ -1,3 +1,4 @@
+/*
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -181,4 +182,18 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+*/
+
+.loading-text {
+  font-family: "Nunito";
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffc220;
+}
+
+.loading-container {
+  display: flex;
+  place-content: center;
+  height: 600px;
 }
