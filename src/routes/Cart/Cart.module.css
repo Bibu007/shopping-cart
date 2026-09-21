@@ -17,13 +17,6 @@
 .invoice-continer {
   display: grid;
 }
-.item-container {
-  display: flex;
-  border: 1px solid black;
-  margin-top: 3px;
-  border-radius: 10px;
-  background-color: #f2f2f4;
-}
 
 .total-container {
   display: flex;
@@ -32,33 +25,32 @@
   padding-right: 200px;
 }
 
-.item {
-  width: 455px;
-  text-align: center;
+.checkout-btn {
+  font-family: "Nunito";
+  font-size: 1.5rem;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #0057e7;
+  color: white;
+  font-weight: 700;
+  padding: 0px 20px;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.btn-container {
   display: flex;
   justify-content: center;
-  white-space: nowrap; /* 2. Forces the text to stay on a single line */
-  overflow: hidden; /* 3. Hides the text that spills out */
-  text-overflow: ellipsis;
+  margin-top: 50px;
 }
 
-.up-down {
-  background-color: inherit;
-  border: none;
-  color: blue;
-  font-weight: 800;
+.checkout-btn:active {
+  transform: translateY(3px);
 }
 
-.up-down:hover {
-  color: #f99500;
-}
-
-.up-down:active {
-  transform: translateY(2px);
-}
-
-.count {
-  display: flex;
-  font-weight: 600;
-  gap: 10px;
+.no-items {
+  padding-left: 600px;
+  margin-top: 100px;
 }

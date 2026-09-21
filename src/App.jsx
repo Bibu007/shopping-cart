@@ -44,6 +44,13 @@ const App = function () {
   console.log(data);
 
   const modifyCart = function (key, count) {
+    console.log("hEY");
+
+    setData((prevData) =>
+      prevData.map((item) =>
+        item.id == key ? { ...item, count: count } : item,
+      ),
+    );
     setCart((cart) => ({
       ...cart,
       [key]: count,
@@ -51,13 +58,7 @@ const App = function () {
 
     console.log(`cart: `, cart);
 
-    setData((prevData) =>
-      prevData.map((item) =>
-        item.id === key ? { ...item, count: count } : item,
-      ),
-    );
-
-    console.log("count", count);
+    //console.log("count", count);
     console.log("data", data);
   };
 
@@ -69,10 +70,12 @@ const App = function () {
     return count;
   };
 
+  console.log("Cart: ", cart);
+
   return (
     <>
       <Header count={countItems()} />
-      <Outlet context={{ modifyCart, data }} />
+      <Outlet context={{ modifyCart, data, cart }} />
     </>
   );
 };
